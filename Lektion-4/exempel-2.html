@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exempel 2</title>
+</head>
+<body>
+    <h1>Exempel 2</h1>
+
+    <script>
+    // Strict Mode
+    "use strict";
+
+    // Deklarera variabler
+    var namn1;
+    let namn2;
+    let namn3, namn4;
+
+    // Tilldela
+    namn1 = "Mahmud";
+    namn2 = "Kalle";
+
+    // Initiera (deklarera och tilldela)
+    let namn5 = "Kajsa";
+
+    // Initiera flera variabler
+    let firstName = "Mahmud",
+        lastName  = "Al Hakim",
+        age       = 45,
+        mobile    = "076-13823334";
+
+    let fru = "Yasmin"; 
+
+    fru = namn5;  // Vi kopierar "Kajsa" in i variabeln fru
+
+    console.log(namn5);
+    console.log(fru);
+    // console.log(barn); // ReferenceError
+
+    // Skapa en konstant
+    const MAX_VALUE = 10;
+    // MAX_VALUE = 20; // Fel. Vi får inte ändra konstanter
+
+
+    // let 123; // FEL, Vi får inte påbörja med siffor
+    let x1, x2, y1, y2;
+
+/*
+    let let; // FEL
+    let var; // FEL
+*/
+    </script>
+
+</body>
+</html>
