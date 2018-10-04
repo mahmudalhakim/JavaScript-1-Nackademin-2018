@@ -19,13 +19,13 @@ console.log(cars2);
 console.log(cars2[3]);
 
 // Hämta ett element och spara i en ny variabel
-let bil1 = cars2[0];
-console.log(bil1);
+let car1 = cars2[0];
+console.log(car1);
 
 // Ändra ett element
 cars2[0] = "Mazda";
 console.log(cars2);
-console.log(bil1);
+console.log(car1);
 
 // En array i JS kan innehålla olika typer
 let person = ["Mahmud" , "Al Hakim" , 45 , true];
@@ -34,7 +34,7 @@ let person = ["Mahmud" , "Al Hakim" , 45 , true];
 let firstName = "Mahmud";
 let lastName = "Al Hakim";
 let age = 45;
-let gift = true;
+let married = true;
 
 // Hitta antal element med egenskapen length
 let antal = person.length;
