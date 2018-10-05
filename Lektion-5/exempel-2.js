@@ -13,7 +13,7 @@ x = y / 2; // 2.5 OBS! punkt, ej komma
 // Modulus-operator
 x = y % 2; // 1 är resten vid heltalsdividion
 x = 10 % 3; // 1
-x = 7 % 5; // 5
+x = 7 % 5; // 2
 x = 5 % 7; // 5
 
 
