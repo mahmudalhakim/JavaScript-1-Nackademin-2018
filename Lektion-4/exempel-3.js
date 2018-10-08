@@ -45,4 +45,3 @@ console.log(typeof age);
 console.log(typeof again);
 console.log(typeof name);
 console.log(typeof ingenting);
-
