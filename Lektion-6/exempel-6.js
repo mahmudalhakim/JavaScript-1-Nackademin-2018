@@ -19,7 +19,8 @@ hello();
 
 
 console.log('--------------------------------');
-// Funktiner med två parametrar
+
+// Funktioner med två parametrar
 // Skapa en funktion som beräknar summan av två tal
 function sum(x = 0 , y = 0){
     console.log(x+y);
