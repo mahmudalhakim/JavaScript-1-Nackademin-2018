@@ -35,7 +35,6 @@ x = x - 2; // 7
 // Eller
 x -= 2; // 5
 
-// 
 x = "TEXT";
 x = x / 2; // NaN
 x = 2 / x; // NaN
