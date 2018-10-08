@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exempel 10</title>
+</head>
+<body>
+    <script>
+/* 
+* Steg 1: Skapa ett program som läser in ett namn via en prompt.
+* Steg 2: Skicka namnet till en funktion som returnerar en hälsningsfras, 
+  t.ex.
+  ”Hej namn. Välkommen till vår webbshop”.
+* Steg 3: Visa meddelandet på webbsidan. (ej alert eller console).
+*/
+
+    // Steg 1 - Skapa ett HTML-dokument och bädda in kod i en script-tagg
+    let name = prompt ("Hej, vad heter du?");
+
+    // Steg 2 - Skapa en funktion som returnerar meddelandet
+    function hello(name){
+        let meddelandet = '<h1>Välkommen till min sida, ' + name + '</h1>';
+        return meddelandet;
+    }
+    
+    // Steg 3 - Visa meddelandet på sidan.
+    document.write(hello(name));
+
+    </script>
+</body>
+</html>
