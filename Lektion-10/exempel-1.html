@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ternary-operatorn</title>
+</head>
+
+<body>
+    <h1>Ternary-operatorn</h1>
+    <script>
+        // Ternary-operatorn  ? :
+        // Villkor ? Om sant : Om falskt
+        function getFee(isMember) {
+            return (isMember ? "20kr" : "100kr");
+        }
+        // exakt samma funktion med if-else istället för ternary
+        function getFeeVersion2(isMember) {
+            if (isMember) {
+                return "20kr";
+            } else {
+                return "100kr";
+            }
+        }
+        // Samma men utan klamrar 
+        function getFeeVersion3(isMember) {
+            if (isMember)
+                return "20kr";
+            else
+                return "100kr";
+        }
+        // Samma men utan  
+        function getFeeVersion4(isMember) {
+            if (isMember) return "20kr";
+            else return "100kr";
+        }
+        console.log(getFee(true));
+        console.log(getFee(false));
+
+
+
+        function promptAge() {
+            let age = prompt("Hur gammal är du?");
+            console.log(age);
+            if (age === null || age === '' || isNaN(age)) {
+                alert("Felaktig inmatning!");
+                return;
+            }
+
+            // console.log(typeof age); // string
+            // console.log(age<18); // "17"<18 = true
+            let voteable = '';
+            if (age < 18) {
+                voteable = "Du får inte rösta!";
+            }
+            else {
+                voteable = "Du får rösta!";
+            }
+            // Omvandla if-else (logiken) ovanför till ternary istället
+            // ? :
+            voteable = (age < 18) ? "Du får inte rösta!" : "Du får rösta!";
+            //          Villkor   ? Gör detta om sant    : "Gör detta om falskt"
+            alert(voteable);
+        }
+        promptAge();
+
+        
+    </script>
+</body>
+
+</html>
