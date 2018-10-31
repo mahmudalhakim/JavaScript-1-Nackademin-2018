@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 8</title>
+    <style>
+    .cooool{
+        font-size: 10px;
+        color: hotpink;
+    }
+    </style>
+</head>
+<body>
+    <h1>Exempel 8</h1>
+    <p>stycke 1</p>
+    <p>Stycke 2</p>
+    <p>stycke 3</p>
+
+    <script>
+    
+    /*
+    Skapa ett skript som går igenom 
+    alla stycken i ett dokument.
+    Du ska se till att alla stycken 
+    påbörjas med en stor bokstav.
+    */
+
+    // Hämta alla p-element
+    let p = document.getElementsByTagName('p');
+    for (let i = 0; i < p.length; i++) {
+        
+        // Hämta innehållet
+        let s = p[i].innerHTML;
+        // Anropa funktionen capitalize
+        s = capitalize(s);
+        // Lägg till en punkt om punkt saknas
+        s = addDotToEndOfString(s);
+        // Uppdatera DOM-trädet
+        p[i].innerHTML = s;
+
+        p[i].className = 'cooool';
+    }
+    function capitalize(s){
+        // Ändra den första bokstaven till versal
+        return s.charAt(0).toUpperCase() + s.substring(1); 
+    }
+
+    function addDotToEndOfString(s){
+        if(s[s.length-1] !== '.'){
+            return s += '.';
+        }
+        return s;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exempel 7</title>
+</head>
+<body>
+    <h1>Exempel 7</h1>
+    <p>Stycke 1</p>
+    <p>Stycke 2.</p>
+    <p>Stycke 3</p>
+
+    <script>
+    /*
+    Skapa ett skript som går igenom alla stycken i ett dokument.
+    Du ska undersöka om varje stycke avslutas med en punkt.
+    Om inte så ska skriptet lägga till en punkt.
+    */
+
+    // Hämta alla p-element
+    let p = document.getElementsByTagName('p');
+
+    // Iterera över en HTMLCollection
+    for (let i = 0; i < p.length; i++) {
+        // Hämta innehållet
+        let s = p[i].innerHTML;
+        // Undersöka om varje stycke avslutas med en punkt
+        if(s[s.length-1] !== '.'){
+            // Om inte så ska skriptet lägga till en punkt.
+            s += '.';
+        }
+        // Uppdatera trädet
+        p[i].innerHTML = s;
+    }
+    </script>
+</body>
+</html>

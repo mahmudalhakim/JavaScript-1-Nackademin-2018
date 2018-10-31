@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 4</title>
+    <style>
+    /* Skapa en CSS-klass (OBS! En punkt före namnet) */
+    .cool{
+       color: white;
+       background-color: black; 
+    }
+    </style>
+</head>
+<body>
+    <h1>Exempel 4</h1>
+    <p>Stycke 1</p>
+    <p>Stycke 2</p>
+    <p>Stycke 3</p>
+   
+    <script>
+    // Hämta alla p-element
+    let p = document.getElementsByTagName('p');
+    console.log(p); // Returnerar en HTMLCollection
+
+    // Skriv ut innehållet av alla p i console
+    for (let i = 0; i < p.length; i++) {
+       console.log(p[i].innerHTML);  
+
+       // Ändra färg på alla stycken
+       // p[i].style.color = 'hotpink'; // sämsta sättet
+
+       // Lägg till en CSS-Klass
+       p[i].className = 'cool'; // OBS! ingen punkt behövs
+    }
+
+    </script>
+</body>
+</html>

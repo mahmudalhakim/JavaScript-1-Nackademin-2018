@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 6</title>
+</head>
+<body>
+    <h1 id="one">Exempel 6</h1>
+    <h1>Rubrik 1</h1>
+    <h1>Rubrik 2</h1>
+    <h1>Rubrik 3</h1>
+    <p>Metoderna querySelector() och querySelectorAll()</p>
+
+    <script>
+    let h = document.querySelector('#one');
+    // Används istället för getElementById
+    h.style.color = 'red';
+    console.log(h);
+
+    let allH1 = document.querySelectorAll('h1');
+    // Används istället för getElementsByTagName
+    console.log(allH1);
+    // querySelectorAll returnerar en NodeList
+    // getElementsByTagName returnerar en HTMLCollection
+
+    // Vi får iterera över en NodeList 
+    // på samma sätt som HTMLCollection
+    for (let i = 0; i < allH1.length; i++) {
+       console.log(allH1[i].innerHTML);
+    }
+    
+    </script>
+</body>
+</html>

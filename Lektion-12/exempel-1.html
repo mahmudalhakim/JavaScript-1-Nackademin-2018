@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 1</title>
+</head>
+<body>
+    <h1 id="one">Exempel 1</h1>
+
+    <p id="demo">Lite text och annat smått och gott.</p>
+        
+    <script>
+    let h = document.getElementById('one')
+    // OBS! Case Sensitive. Det står fel i dokumentationen.
+    console.log(h);
+    // Vi får en referens till hela elementet
+    //  <h1 id="one">Exempel 1</h1>
+
+
+    // Ändra innehåll
+    let p = document.getElementById('demo');
+    // Ändra text
+    p.innerText = "Hello DOM";
+    // Ändra HTML
+    p.innerHTML = '<b>Lite fet text</b>';
+ // p.innerText = '<b>Lite fet text</b>';
+ 
+   
+
+    h = document.getElementById("FEL");
+    console.log(h); 
+    // Om elementet saknas (felaktig ID)
+    // null returneras
+
+    if(h === null){
+        console.log("Elemetet saknas");
+    }
+    else{
+        console.log("Det finns ett element med id=FEL");
+    }
+
+    </script>
+</body>
+</html>

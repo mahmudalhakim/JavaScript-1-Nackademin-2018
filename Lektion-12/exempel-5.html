@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exempel 5</title>
+    <style>
+    .nice {
+        color: green;
+        font-size: 50px;
+        background-color: aliceblue;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Exempel 5</h1>
+    <h1>Rubrik</h1>
+    <h1>Rubrik</h1>
+    <h1>Rubrik</h1>
+    <h1>Rubrik</h1>
+
+    <script>
+    /*
+    Det finns flera rubriker (h1) i ett HTML-dokument.
+    Leta efter den första rubriken
+    och lägg till CSS-klassen nice.
+    OBS! Det finns inget id på den första rubriken.
+    */
+
+   // Hämta alla h1
+   let allH1 = document.getElementsByTagName('h1');
+   console.log(allH1); // HTMLCollection
+
+   // Hämta första elementet
+   let firstH1 = allH1[0];
+   console.log(firstH1);
+
+   // Lägg till klassen nice
+   firstH1.className = 'nice';
+   console.log(firstH1);
+
+   // Samma lösning med mindre syntax
+   let h1 = document.getElementsByTagName('h1');
+   h1[0].className = 'nice';
+
+
+   // Extra fråga
+   // Koppla klassen nice till den sista rubriken
+   
+   // Hämta sista elementet och koppla klassen 
+   allH1[allH1.length-1].className = 'nice';
+
+
+   
+    </script>
+</body>
+</html>

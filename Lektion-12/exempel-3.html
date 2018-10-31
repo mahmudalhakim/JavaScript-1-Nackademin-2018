@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 3</title>
+</head>
+<body>
+    <h1>Exempel 3</h1>
+    <p>Ändra CSS med DOM</p>
+
+    <h1 id="one">En rubrik</h1>
+
+    <script>
+    // Hämta ett element med id=one
+    let one = document.getElementById('one');
+
+    // Ändra färg med egenskapen style
+    one.style.color = 'green';
+
+    // Ändra teckenstorlek med CSS
+    one.style.fontSize = '50px';
+
+    // Ändra till versaler med CSS
+    one.style.textTransform = 'uppercase';
+
+    // Dölj elementet med CSS
+    one.style.display = 'none';
+
+    // Ändra CSS med egenskapen body och style
+    document.body.style.backgroundColor = "pink";
+
+    // Vad är body ?
+    console.log(document.body);
+    // Svar:
+    // body är en egenskap som returnerar elementet body
+    // och alla barn som finns i body
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exempel 2</title>
+</head>
+<body>
+    <h1>Exempel 2</h1>
+
+    <h1 id="h">Huvudrubrik</h1>
+
+    <script>
+    /*
+    Skapa ett skript som letar
+    efter huvudrubriken (h1).
+    Ändra texten till versaler med JavaScript.
+    (OBS! Använd inte CSS).
+    */
+    // Hämta en referens till elementet
+    let h = document.getElementById('h');
+
+    // Hämta texten från elementet
+    let text = h.innerHTML;
+    // Ändra text till versaler
+    text = text.toUpperCase(); // Är string JS mutable/immutable
+    // Skicka den nya texten till elementet
+    h.innerHTML = text;
+
+    // Eller med "snyggare" källkod
+    h.innerHTML= h.innerHTML.toUpperCase();
+    
+    </script>
+</body>
+</html>
