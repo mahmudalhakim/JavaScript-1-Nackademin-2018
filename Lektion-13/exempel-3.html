@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 3</title>
+</head>
+<body>
+    <h1>Exempel 3</h1>
+
+    <p></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    
+    <button onclick="changeFirstParagraphTextAndColor()">Klicka här för att ändra första P</button>
+   
+    <button onclick="changeText('demo1'); changeColor('demo1', 'blue');">
+        Klicka här för att ändra p med id=demo1
+    </button>
+   
+    <button onclick="changeText('demo2'); changeColor('demo2', 'green');">
+        Klicka här för att ändra p med id=demo2
+    </button>
+
+    <script>
+
+    function changeText(id){
+        console.log("Jag är inne changeText");
+
+        let el = document.getElementById(id);
+        el.innerHTML = "Hello Paragraph " + id;
+    }
+
+    function changeColor(id, color){
+        console.log("Jag är inne i changeColor");
+        console.log("ID = "+id);
+        console.log("color = "+color);
+        let el = document.getElementById(id);
+        el.style.color = color;
+    }
+
+
+    function changeFirstParagraphTextAndColor(){
+        console.log("Jag är inne changeFirstParagraphText");
+        let el = document.getElementsByTagName("p")[0];
+        el.innerHTML = "Hello First Paragraph";
+        el.style.color = "hotpink";
+    }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 9</title>
+</head>
+
+<body>
+    <h1>Exempel 9</h1>
+
+    Ange pris exkl. moms:
+    <input type="text" id="price1">
+    <button id="btnPrice">Beräkna pris inkl. moms (25%)</button>
+    <p id="price2">Resultat visas här!</p>
+
+    <script>
+        // Hämta nödvändiga element
+        let elPrice1 = document.getElementById('price1');
+        let elPrice2 = document.getElementById('price2');
+        let btnPrice = document.getElementById('btnPrice');
+
+        // Koppla event till knappen
+        btnPrice.onclick = getPrice;  // OBS! inga paranteser
+        //btnPrice.onclick = getMessage; // OBS! Vi får inte lägga till flera funktioner
+
+        // Skapa funktionen
+        function getPrice() {
+            let price = elPrice1.value;
+            if (price === '')
+                elPrice2.innerHTML = "Pris saknas!";
+            else if (isNaN(price))
+                elPrice2.innerHTML = "Felaktigt pris!";
+            else
+                elPrice2.innerHTML = elPrice1.value * 1.25;
+        }
+
+    </script>
+
+</body>
+
+</html>

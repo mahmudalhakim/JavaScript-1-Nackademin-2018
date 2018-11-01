@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 12</title>
+</head>
+
+<body>
+    <h1>Exempel 12</h1>
+    <button>Red</button>
+
+    <script>
+    // Skapa ett skript som ändrar 
+    // sidan bakgrudnsfärg till röd när man klickar på knappen 
+    // OBS! Du får inte använda HTML-Attribut
+
+    let btn = document.getElementsByTagName('button')[0];
+
+    // Standard DOM Event
+    btn.onclick = function(){
+        document.body.bgColor = 'red';
+    }
+
+    </script>
+</body>
+
+</html>

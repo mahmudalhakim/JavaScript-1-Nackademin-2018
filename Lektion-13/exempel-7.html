@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 7</title>
+</head>
+<body>
+    <h1>Exempel 7</h1>
+
+    <button onclick="getTime();">Visa klockan!</button>
+    <h1 id="time"></h1>
+
+    <script>
+    function getTime(){
+        let el = document.getElementById('time');
+        setInterval(function(){
+            el.innerHTML =  new Date().toTimeString().substring(0,8);
+        },1000)
+        
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 8</title>
+</head>
+
+<body>
+    <h1>Exempel 8</h1>
+
+    <p>
+        Username:
+        <input type="text" id="username">
+    </p>
+    <p id="feedbackUser"></p>
+    <p>
+        Password:
+        <input type="password" id="password">
+    </p>
+    <p id="feedbackPass"></p>
+
+    <button>Register</button>
+
+
+    <script>
+        // Hämta nödvändiga element
+        let elUser = document.getElementById('username');
+        let elPass = document.getElementById('password');
+        let elMsgUser  = document.getElementById('feedbackUser');
+        let elMsgPass = document.getElementById("feedbackPass");
+
+        // Koppla events till olika funktioner
+        elUser.oninput = checkUsername;
+        elPass.oninput = checkPassword;
+
+        // Ändra style 
+        elMsgUser.style.color = "red"; 
+        elMsgPass.style.color = "red"; 
+        
+        function checkUsername(){
+            console.log("Eventet aktiveras/avfyras!");
+            
+            console.log(elUser.value);  
+            console.log(elUser.innerHTML);  
+            // OBS! innerHTML funker inte med input
+            
+            // Ternary-operator istället för if-else
+            elMsgUser.innerHTML = elUser.value.length < 5 ? "Ange minst 5 tecken tack!" : "";
+           
+        }
+
+        function checkPassword(){
+            if(elPass.value.length < 8){
+                elMsgPass.innerHTML = "Lösenordet måste bestå av minst 8 tecken!";
+            }
+            else{
+                elMsgPass.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

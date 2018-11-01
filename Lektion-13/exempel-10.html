@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exempel 10</title>
+</head>
+
+<body>
+    <h1>Exempel 10</h1>
+    <button id="btnDate">Visa dagens datum och tid</button>
+    <p id="date"></p>
+    <p id="time"></p>
+
+    <script>
+    // Hämta en refrens till knappen 
+    let btnDate = document.getElementById("btnDate");
+    
+    // Koppla event med standard DOM Events
+    // btnDate.onclick = displayDate; 
+    // OBS! Vi får inte lägga till flera funktioner
+    // Lösning...
+    // Koppla event listeners istället
+    btnDate.addEventListener('click', displayDate);
+    btnDate.addEventListener('click', displayTime);
+
+    function displayDate(){
+        document.getElementById('date').innerHTML = new Date().toLocaleDateString();
+    }
+    function displayTime(){
+        document.getElementById('time').innerHTML = new Date().toLocaleTimeString();
+    }
+
+    </script>
+</body>
+
+</html>
