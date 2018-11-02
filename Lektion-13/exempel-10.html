@@ -11,6 +11,7 @@
     <button id="btnDate">Visa dagens datum och tid</button>
     <p id="date"></p>
     <p id="time"></p>
+    <p id="counter"></p>
 
     <script>
     // Hämta en refrens till knappen 
@@ -24,8 +25,16 @@
     btnDate.addEventListener('click', displayDate);
     btnDate.addEventListener('click', displayTime);
 
+    let counter=0;
     function displayDate(){
-        document.getElementById('date').innerHTML = new Date().toLocaleDateString();
+        counter++;
+        if(counter == 1)
+            document.getElementById('date').innerHTML = new Date() + "<br>";
+        else if(counter == 2)
+            document.getElementById('date').innerHTML += new Date().toLocaleDateString();
+       
+        document.getElementById('counter').innerHTML = counter;
+
     }
     function displayTime(){
         document.getElementById('time').innerHTML = new Date().toLocaleTimeString();
