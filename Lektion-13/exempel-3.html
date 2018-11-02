@@ -17,8 +17,14 @@
         Klicka här för att ändra p med id=demo1
     </button>
    
-    <button onclick="changeText('demo2'); changeColor('demo2', 'green');">
+    <button onclick="changeText('demo2'); changeColor('demo2', 'green'); info(this);">
         Klicka här för att ändra p med id=demo2
+    </button>
+   
+    <hr>
+
+    <button onclick="testThis(this)" id="btnTestThis">
+        Klicka här för att testa "this"
     </button>
 
     <script>
@@ -38,13 +44,23 @@
         el.style.color = color;
     }
 
-
     function changeFirstParagraphTextAndColor(){
         console.log("Jag är inne changeFirstParagraphText");
         let el = document.getElementsByTagName("p")[0];
         el.innerHTML = "Hello First Paragraph";
         el.style.color = "hotpink";
     }
+
+    function testThis(el){
+        console.info("el peker på elementet (knappen): " + el);
+        console.info("Knappens tidigare text är : " + el.innerHTML);
+        // Ändra knappens text
+        el.innerHTML = "HELLO";
+        console.info("Ny text på knappen: " + el.innerHTML);
+    }
+    btnTestThis = document.getElementById('btnTestThis');
+    // Visa info om knappen i console med metoden dir
+    console.dir(btnTestThis);
 
     </script>
 
