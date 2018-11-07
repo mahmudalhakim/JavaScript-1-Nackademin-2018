@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Uppgift 2</title>
+</head>
+<body>
+
+    <h1>Mahmud Al Hakim</h1>
+    <p>första ordet i en ny mening. man sätter
+    alltid stor bokstav på det första ordet i en
+    ny mening. detta för att visa att en ny
+    kommunikation startar.</p>
+    <p>   lite test. lite mer text.</p>
+    <p>mer test.</p>
+    
+<script>
+/*    
+Skapa ett skript som går igenom 
+alla stycken i ett dokument.
+Du ska se till att alla meningar 
+i alla stycken startar med en stor bokstav.
+
+Pseudokod - beskrivning på en algoritm 
+
+1. Hämta alla p-taggar
+2. Gå igenom alla taggar (loop)
+2.1. Spara alla meningar i en array
+2.2. Iterera över arrayen (en inre loop)
+2.2.1. Ändra den första bokstaven till versal
+2.3. Konvertera till sträng och uppdatera DOM
+
+*/ 
+
+
+// 1. Hämta alla p-taggar
+let allP = document.getElementsByTagName('p');
+
+// 2. Gå igenom alla p-taggar (loop)
+for (let i = 0; i < allP.length; i++) {
+    // 2.1. Spara alla meningar i en array
+    let p = allP[i]; // Referens till p-taggen
+    let stycke = p.innerHTML.split('.');
+
+    // 2.2. Iterera över arrayen (en inre loop)
+    for (let i = 0; i < stycke.length; i++) {
+        // 2.2.1. Ändra den första bokstaven till versal
+        stycke[i] = capitalize(stycke[i]);
+    } 
+
+    // 2.3. Konvertera till sträng och uppdatera DOM
+    p.innerHTML = stycke.join('. ');
+
+}  // Avslutar loopen med allP
+
+function capitalize(s){
+    if(s.length < 1)
+        return;
+
+    s = s.trim(); // Rensa alla blanka tecken
+    return s[0].toUpperCase() + s.substring(1);
+}
+</script>
+
+</body>
+</html>
