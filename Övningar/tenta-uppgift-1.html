@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uppgift 1</title>
+</head>
+<body>
+
+    <h1>Mahmud Al Hakim</h1>
+    <p id="birthdate"></p>
+    
+
+<script>
+/*    
+  Skriv ett program som ber användaren mata in 
+  (via en prompt)
+  sitt födelsedatum i detta format ÅÅÅÅ-MM-DD.
+
+Implementera alla nödvändiga felkontroller och visa olika felmeddelanden vid felaktig inmatning
+
+
+Programmet ska räkna ut personen ålder.
+Visa på webbsidan hur många år, månader och dagar personen är gammal.
+
+
+*/ 
+
+while(true){
+
+let birthdate =  prompt("Ange ditt födelsedatum i detta format ÅÅÅÅ-MM-DD" , "1973-12-01");
+console.log(birthdate);
+
+// Om användaren klickar på knappen Avbryt eller tycker på ESC
+if(birthdate === null){
+    break;
+}
+
+if(birthdate.length !== 10){
+    alert("Felaktigt antal tecken!");
+    continue;
+}
+
+if(birthdate.charAt(4) !== '-' ){
+    alert("Första - saknas!");
+    continue;
+}
+
+if(birthdate.charAt(7) !== '-' ){
+    alert("Andra - saknas!");
+    continue;
+}
+
+// xxxx-xx-xx
+birthdate = birthdate.split('-');
+console.log(birthdate);
+
+let year = birthdate[0];
+year = Number(year);
+if(isNaN(year)){
+    alert("Felaktigt år")
+    continue;
+}
+
+let month = birthdate[1];
+month = Number(month);
+if(month < 1 || month > 12 || isNaN(month)){
+    alert("Felaktig månad");
+    continue;
+}
+
+let date = birthdate[2];
+date = Number(date);
+if(date < 1 || date > 31 || isNaN(date)){
+    alert("Felaktig dag");
+    continue;
+}
+
+
+/*
+Programmet ska räkna ut personen ålder.
+*/
+
+/*
+Visa på webbsidan hur många år, månader och dagar personen är gammal.
+*/
+
+let now = new Date();
+let nowYear  = now.getFullYear();   // 2018
+let nowMonth = now.getMonth() + 1;  // 11
+let nowDate  = now.getDate();       // 7
+
+console.log(nowYear, nowMonth, nowDate);
+// OBS! Mina variabler heter year, month, date
+console.log(year, month, date);
+
+let years = nowYear - year;
+
+
+let months = nowMonth - month;
+if(months < 0){
+    years--;
+    months +=12;
+}
+
+let days = nowDate - date;
+if(days < 0){
+    months--;
+    days += 31;  // OBS! En bugg 
+}
+
+console.log(years);
+console.log(months);
+console.log(days);
+
+console.log(birthdate);
+let el = document.getElementById('birthdate');
+el.innerHTML = "<h2>Du har angett följande födelsedatum " + birthdate.join('-') + "</h2>";
+el.innerHTML += "<h2>Du är " + years + " år, " + months + " månader och " + days + " dagar gammal.</h2>";
+
+break; // Avsluta programmet
+
+} // while
+
+</script>
+
+</body>
+</html>
